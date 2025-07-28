@@ -1,10 +1,7 @@
-# 5197888\_Devisree
+# 5197888_Devisre
 
-<img src="https://github.com/K-Devisree/5197888\_Devisree/blob/main/Git/5197888\_K\_Devisree.jpeg" alt="Git image">
+### Git Image
+![Git Image](https://raw.githubusercontent.com/K-Devisree/5197888_Devisree/main/Git/5197888_K_Devisree.jpeg)
 
-
-
-<img src="https://github.com/K-Devisree/5197888\_Devisree/blob/main/SDLC/5197888\_K\_Devisree.png" alt="SDLC image">
-
-
-
+### SDLC Image
+![SDLC Image](https://raw.githubusercontent.com/K-Devisree/5197888_Devisree/main/SDLC/5197888_K_Devisree.png)
