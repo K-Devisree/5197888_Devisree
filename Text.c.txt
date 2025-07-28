@@ -2,8 +2,7 @@
 void main(){
 int a=0;
 int b=1;
-int c=5'
+int c=5;
 print("%d%d%d", a+b+c);
 }
 
-hi helloo how r u
