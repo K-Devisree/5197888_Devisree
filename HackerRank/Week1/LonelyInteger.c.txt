@@ -1,0 +1,19 @@
+Question:5
+Given an array of integers, where all elements but one occur twice, find the unique element.
+
+Solution:
+#include <stdio.h>
+
+int main() {
+    int n;
+    scanf("%d", &n);
+    int arr[n], result = 0;
+    
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+        result ^= arr[i];
+    }
+    
+    printf("%d\n", result);
+    return 0;
+}

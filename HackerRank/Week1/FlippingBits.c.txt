@@ -1,0 +1,16 @@
+Question:6
+You will be given a list of 32 bit unsigned integers. Flip all the bits (1->0 and 0->1 ) and return the result as an unsigned integer.
+
+Solution:
+#include<stdio.h>
+int main(){
+    int q;
+    scanf("%d",&q);
+    while(q--){
+        unsigned int n;
+        scanf("%u",&n);
+        unsigned int result = ~n;
+        printf("%u\n",result);
+    }
+    return 0;
+}

@@ -1,0 +1,56 @@
+Question:10
+There are two n-element arrays of integers, A  and B. Permute them into A'some B'  and  such that the relation A'[i]+B'[i] >- k holds for all i where 0<=i<n .
+
+There will be q queries consisting of A, B, and k. For each query, return YES if some permutation A', B' satisfying the relation exists. Otherwise, return NO.
+
+Solution:
+#include <stdio.h>
+
+#define MAX 1000
+
+void bubbleSortAsc(int arr[], int n) {
+    for (int i = 0; i < n-1; i++)
+        for (int j = 0; j < n-i-1; j++)
+            if (arr[j] > arr[j+1]) {
+                int tmp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = tmp;
+            }
+}
+
+void bubbleSortDesc(int arr[], int n) {
+    for (int i = 0; i < n-1; i++)
+        for (int j = 0; j < n-i-1; j++)
+            if (arr[j] < arr[j+1]) {
+                int tmp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = tmp;
+            }
+}
+
+int main() {
+    int q;
+    scanf("%d", &q);
+    while (q--) {
+        int n, k;
+        scanf("%d %d", &n, &k);
+        
+        int A[MAX], B[MAX];
+        for (int i = 0; i < n; i++) scanf("%d", &A[i]);
+        for (int i = 0; i < n; i++) scanf("%d", &B[i]);
+        
+        bubbleSortAsc(A, n);
+        bubbleSortDesc(B, n);
+        
+        int possible = 1;
+        for (int i = 0; i < n; i++) {
+            if (A[i] + B[i] < k) {
+                possible = 0;
+                break;
+            }
+        }
+        
+        printf("%s\n", possible ? "YES" : "NO");
+    }
+    return 0;
+}

@@ -1,0 +1,34 @@
+Question:9
+A pangram is a string that contains every letter of the alphabet. Given a sentence determine whether it is a pangram in the English alphabet. Ignore case. Return either pangram or not pangram as appropriate.
+
+Solution:
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
+
+int main() {
+    char s[1000];
+
+    if (fgets(s, sizeof(s), stdin) == NULL) {
+        return 1;
+    }
+
+    int letters[26] = {0};
+    for (int i = 0; s[i] != '\0'; i++) {
+        if (isalpha(s[i])) {
+            letters[tolower(s[i]) - 'a'] = 1;
+        }
+    }
+
+    int isPangram = 1;
+    for (int i = 0; i < 26; i++) {
+        if (!letters[i]) {
+            isPangram = 0;
+            break;
+        }
+    }
+
+    printf("%s\n", isPangram ? "pangram" : "not pangram");
+
+    return 0;
+}

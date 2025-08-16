@@ -1,0 +1,32 @@
+Question:3
+Given a time in 12-hour AM/PM format, convert it to military (24-hour) time.
+
+Note: - 12:00:00AM on a 12-hour clock is 00:00:00 on a 24-hour clock.
+- 12:00:00PM on a 12-hour clock is 12:00:00 on a 24-hour clock.
+
+Solution:
+#include <stdio.h>
+#include <string.h>
+
+char* timeConversion(char* s) {
+    static char result[9];     int hour;
+    
+    sscanf(s, "%2d", &hour); 
+    
+    if (s[8] == 'A' && hour == 12) {
+        hour = 0;
+    } 
+    else if (s[8] == 'P' && hour != 12) {
+        hour += 12;
+    }
+    
+    sprintf(result, "%02d:%c%c:%c%c", hour, s[3], s[4], s[6], s[7]);
+    return result;
+}
+
+int main() {
+    char s[11];
+    scanf("%s", s);
+    printf("%s\n", timeConversion(s));
+    return 0;
+}

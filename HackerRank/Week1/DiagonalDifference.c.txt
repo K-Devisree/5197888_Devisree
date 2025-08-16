@@ -1,0 +1,35 @@
+Question:7
+Given a square matrix, calculate the absolute difference between the sums of its diagonals.
+
+For example, the square matrix  is shown below:
+
+1 2 3
+4 5 6
+9 8 9  
+
+
+Solution:
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int n;
+    scanf("%d", &n);
+    int arr[n][n];
+    
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            scanf("%d", &arr[i][j]);
+        }
+    }
+    
+    int primarySum = 0, secondarySum = 0;
+    for (int i = 0; i < n; i++) {
+        primarySum += arr[i][i];           
+        secondarySum += arr[i][n - 1 - i];     }
+    
+    int diff = abs(primarySum - secondarySum);
+    printf("%d\n", diff);
+    
+    return 0;
+}
