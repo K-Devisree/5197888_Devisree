@@ -1,0 +1,48 @@
+Question: Tower Breakers
+Two players are playing a game of Tower Breakers! Player  always moves first, and both players always play optimally.The rules of the game are as follows:
+
+Initially there are  towers.
+Each tower is of height .
+The players move in alternating turns.
+In each turn, a player can choose a tower of height  and reduce its height to , where  and  evenly divides .
+If the current player is unable to make a move, they lose the game.
+Given the values of  and , determine which player will win. If the first player wins, return . Otherwise, return .
+
+Example. 
+
+There are  towers, each  units tall. Player  has a choice of two moves:
+- remove  pieces from a tower to leave  as 
+- remove  pieces to leave 
+
+Let Player  remove . Now the towers are  and  units tall.
+
+Player  matches the move. Now the towers are both  units tall.
+
+Now Player  has only one move.
+
+Player  removes  pieces leaving . Towers are  and  units tall.
+Player  matches again. Towers are both  unit tall.
+
+Player  has no move and loses. Return .
+
+
+Solution:
+#include<stdio.h>
+#include<stdlib.h>
+
+int towerbreakers(int n,int m){
+    if(m==1||n%2==0)
+        return 2;
+    else
+        return 1;
+}
+int main(){
+    int a;
+    scanf("%d",&a);
+    while(a--){
+        int n,m;
+        scanf("%d%d",&n,&m);
+        printf("%d\n",towerbreakers(n,m));
+    }
+    return 0;
+}
